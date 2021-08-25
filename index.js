@@ -4,7 +4,9 @@ var score=0;
 //taking name of the user
 var name = readlineSync.question("What is your name? ");
 //welcome message
-console.log("welcome "+name+"!"+" Let us see how much you know Naga");
+console.log("welcome "+name+"!"+" Let us see how much you know about Naga.");
+console.log("+1 score for every correct answer and -1 for every wrong answer.")
+console.log("---")
 
 //fucntions
 
@@ -29,12 +31,14 @@ function play(question,answer) //defined a function called play and gave paramet
   var ans = readlineSync.question(question);
   if(ans == answer)
   {
-    console.log(chalk.green("you are correct!"));
+    console.log(chalk.green("you are correct !"));
+    console.log("---")
     score++
   }
   else
   {
-    console.log(chalk.red("you are wrong"));
+    console.log(chalk.red("you are wrong !"));
+    console.log("---")
     score--
   }
   console.log("your score is "+ score);
@@ -80,7 +84,7 @@ var questions =
  }
 function scores() 
 {
-  console.log("These are the high scores, let me know if I should update them");
+  console.log("These are the high scores, let me know if I should update them:");
 
   hiscore.map(score => console.log(score.name, " : ", score.score))
 }
